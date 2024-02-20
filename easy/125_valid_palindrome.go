@@ -10,11 +10,11 @@ func isPalindrome(s string) bool {
     fmt.Println(runes)
     for i, j := 0, len(runes)-1; i < j; {
         fmt.Println(i, j)
-        if !unicode.IsLetter(runes[i]) {
+        if !unicode.IsLetter(runes[i]) && !unicode.IsDigit(runes[i]) {
             i++
             continue
         }
-        if !unicode.IsLetter(runes[j]) {
+        if !unicode.IsLetter(runes[j]) && !unicode.IsDigit(runes[j]) {
             j--
             continue
         }
@@ -31,4 +31,5 @@ func main() {
     fmt.Println(isPalindrome("A man, a plan, a canal: Panama"))
     fmt.Println(isPalindrome("race a car"))
     fmt.Println(isPalindrome(" "))
+    fmt.Println(isPalindrome("0P"))
 }
